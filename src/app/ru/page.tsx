@@ -26,7 +26,7 @@ export default function HomePage() {
 
     <main>
       <section className="hero" aria-labelledby="hero-title">
-        <Image src="/placeholders/hero-mountain-expedition.png" alt="Участник экспедиции на горном хребте на рассвете — сгенерированная композиционная заглушка" fill priority sizes="100vw" className="heroImage" />
+        <Image src={`${basePath}/placeholders/hero-mountain-expedition.png`} alt="Участник экспедиции на горном хребте на рассвете — сгенерированная композиционная заглушка" fill priority sizes="100vw" className="heroImage" />
         <div className="heroShade" />
         <div className="heroContent">
           <p className="eyebrow">Оператор сложных экспедиций</p>
@@ -46,7 +46,7 @@ export default function HomePage() {
       <section className="directions" id="directions">
         <div className="directionsIntro"><p>География</p><h2>Направление — это не точка на карте</h2><p className="directionLead">Это связка сезона, района, команды, правил и реальной логистики. Публикуем только проверенные программы.</p><p className="mediaDisclosure">Визуальные материалы раздела сгенерированы и используются как тематические заглушки.</p></div>
         <div className="directionGrid">{directions.map((item, index) => <article className={`direction d${index + 1}`} key={item.name}>
-          <Image src={item.image} alt={item.alt} fill sizes="(max-width: 767px) 100vw, (max-width: 1000px) 50vw, 33vw" placeholder="blur" blurDataURL={item.blur} />
+          <Image src={`${basePath}${item.image}`} alt={item.alt} fill sizes="(max-width: 767px) 100vw, (max-width: 1000px) 50vw, 33vw" placeholder="blur" blurDataURL={item.blur} />
           <div className="directionShade"/><div className="directionCopy"><span>0{index + 1}</span><h3>{item.name}</h3><p>{item.note}</p></div>
         </article>)}</div>
       </section>
@@ -60,7 +60,7 @@ export default function HomePage() {
         <h2>До решения нужно знать больше, чем название программы</h2>
         <div className="knowledgeGrid">
           <article className="featured">
-            <div className="featuredMedia"><Image src="/placeholders/preparation-route.webp" alt="Планирование маршрута по карте — сгенерированная тематическая заглушка" fill sizes="(max-width: 767px) 100vw, 55vw" placeholder="blur" blurDataURL="data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAABQAgCdASoQAAsAAgA0JYgCdAYuR20feYiVQVAA/v12XMrhXju4nfYPts6F0IvHOi8h6GXcnCm0bZZrArJJuy4embfSPtzC1ewm0Q+B/7/mQajImcXPRaEI3wWFB/MccB97mv+LWiOwYnPzftaGkkDydMs27mfOF74AAA==" /><span>Сгенерированная заглушка</span></div>
+            <div className="featuredMedia"><Image src={`${basePath}/placeholders/preparation-route.webp`} alt="Планирование маршрута по карте — сгенерированная тематическая заглушка" fill sizes="(max-width: 767px) 100vw, 55vw" placeholder="blur" blurDataURL="data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAABQAgCdASoQAAsAAgA0JYgCdAYuR20feYiVQVAA/v12XMrhXju4nfYPts6F0IvHOi8h6GXcnCm0bZZrArJJuy4embfSPtzC1ewm0Q+B/7/mQajImcXPRaEI3wWFB/MccB97mv+LWiOwYnPzftaGkkDydMs27mfOF74AAA==" /><span>Сгенерированная заглушка</span></div>
             <div className="featuredBody"><span>База знаний</span><h3>Из чего складывается полная стоимость экспедиции</h3><p>Как читать смету, где возникают переменные расходы и что зафиксировать до депозита.</p><a href="#selection">Получить разбор <Arrow /></a></div>
           </article>
           <article><span>Документы</span><h3>Своё оружие или аренда на месте</h3><p>Какие вопросы проверить до выбора маршрута.</p></article>
