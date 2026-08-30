@@ -1,0 +1,31 @@
+services:
+  app:
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-https://sunny-rentals.online/irma}
+        NEXT_PUBLIC_BASE_PATH: ${NEXT_PUBLIC_BASE_PATH:-/irma}
+    environment:
+      NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-https://sunny-rentals.online/irma}
+      NEXT_PUBLIC_BASE_PATH: ${NEXT_PUBLIC_BASE_PATH:-/irma}
+      DATABASE_URI: postgresql://irma:${POSTGRES_PASSWORD:-irma}@db:5432/irma
+      PAYLOAD_SECRET: ${PAYLOAD_SECRET:-development-only-change-me-32-chars}
+    ports: ["127.0.0.1:3010:3000"]
+    restart: unless-stopped
+    depends_on:
+      db: { condition: service_healthy }
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: irma
+      POSTGRES_USER: irma
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-irma}
+    volumes: ["irma_db:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U irma -d irma"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+volumes:
+  irma_db:
