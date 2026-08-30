@@ -7,9 +7,27 @@ export const riskSteps = [
 ] as const;
 
 export const directions = [
-  { name: "Россия", note: "Горные районы, тайга и удалённая логистика", image: "/placeholders/hero-mountain-expedition.png" },
-  { name: "Африка", note: "Маршруты с прозрачной структурой расходов", image: "/placeholders/hero-mountain-expedition.png" },
-  { name: "Европа", note: "Компактные экспедиции и сложная разрешительная часть", image: "/placeholders/hero-mountain-expedition.png" }
+  {
+    name: "Россия",
+    note: "Горные районы, тайга и удалённая логистика",
+    image: "/placeholders/direction-russia.webp",
+    alt: "Горный козёл в каменистой долине — сгенерированная тематическая заглушка",
+    blur: "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAQAgCdASoLABAAAgA0JZAC7AEUpCp3WbTQAP6VCMwvbReZ/5clPG1yAcDeisGaX8Akpe6nw4VHtyoTe+0bKGfrwVrWDdwG70kTcme/QK5d6xZn0M9BVWfAAAA="
+  },
+  {
+    name: "Африка",
+    note: "Маршруты с прозрачной структурой расходов",
+    image: "/placeholders/direction-africa.webp",
+    alt: "Стадо буйволов в саванне на закате — сгенерированная тематическая заглушка",
+    blur: "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAABwAgCdASoLABAAAgA0JagCdLoAyv8D2PbByp7wAP73PmIpwDwbcF9+h9/G/N0DU0zwkWdnfPI+R9cbEOQpfMK3DEWMl8KdEVg2axoIG5fX93GJorC6iSG0/j4lOpgQy62gAA=="
+  },
+  {
+    name: "Европа",
+    note: "Компактные экспедиции и сложная разрешительная часть",
+    image: "/placeholders/direction-europe.webp",
+    alt: "Олень в туманном лесу на рассвете — сгенерированная тематическая заглушка",
+    blur: "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAABQAgCdASoLABAAAgA0JQBOgMWW50OLnf3lysAA/vlnPGJpl0e8STHS3epz6N9r8xb+C6nOLQR2OSa0UiiJaGh4gaA6nvrGzWIksNoSRtinml0KKkU6QIzezOJ0+gvS+3SdtLHdkCFgAA=="
+  }
 ] as const;
 
 export const journeySteps = [
